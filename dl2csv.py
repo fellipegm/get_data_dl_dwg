@@ -26,7 +26,7 @@ if len(dirs) == 0:
 for directory in dirs:
     if (os.path.isdir(os.path.join(current_dir, directory + "DXF"))):
         shutil.rmtree(os.path.join(current_dir, directory + "DXF"))
-        os.mkdir(os.path.join(current_dir, directory + "DXF"))
+    os.mkdir(os.path.join(current_dir, directory + "DXF"))
         
 
 # Abre os dados de correspondência entre TAG - Sistema
@@ -56,7 +56,7 @@ for directory in dirs:
     os.chdir(os.path.join(current_dir, directory + '/DXF'))
     dxfs = glob.glob('*.dxf*')
 
-    print("\r\n\nObtendo os dados do documento: {0}\r\n".format(directory[0:-1]))
+    print("\r\n\nObtendo os dados do documento: {0}\n".format(directory[0:-1]))
     dados = []
     total_folhas = len(dxfs)
     for folha, dxf in enumerate(dxfs):
@@ -71,7 +71,7 @@ for directory in dirs:
 
     os.chdir(current_dir)
     # Salva os dados
-    print("\r\nEscrevendo dados no arquivo {0}\r\n".format(directory[0:-1] + '.xlsx'))
+    print("\r\nEscrevendo dados no arquivo {0}\n".format(directory[0:-1] + '.xlsx'))
     columns = ['Sistema', 'Sistema Faixa TAG', 'TAG', 'Tipo']
     columns.extend(['Observação ' + str(i) for i in range(max_obs)])
     columns.extend(['Painel', 'Controlador', 'Título', 'Folha'])

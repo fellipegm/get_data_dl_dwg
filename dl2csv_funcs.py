@@ -460,8 +460,9 @@ def find_data(dxf,  # arquivo dxf
                        tag_controlador, tag_titulo, tag_folha, faixas_sistema)
 
 
-########################################################################################################################
-# Escreve a barra de progresso
+# =============================================================================
+#     Escreve a barra de progresso
+# =============================================================================
 def imprime_progresso(processo, total_processos):
     bar_length = 20
     freq_atualizacao = int(total_processos/100)
